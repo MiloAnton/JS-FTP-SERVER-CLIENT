@@ -28,7 +28,7 @@ export function launch(port) {
           socket.write("200 \r\n");
           break;
         case "LIST":
-          socket.write("\nCurrent directory filenames:" + readDirectory());
+          socket.write("\nCurrent directory filenames: \n" + readDirectory());
           break;
         case "CWD":
           socket.write("The folder you're in is now : \r\n");
