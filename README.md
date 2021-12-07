@@ -31,7 +31,7 @@ for a great README.md file.
 
 ## Installation
 
-myFtp_MiloAnton requires [Node.js](https://nodejs.org/) v10+ to run.
+myFtp_MiloAnton requires [Node.js](https://nodejs.org/) v14+ to run.
 
 Install the dependencies with ```npm install``` before tryinbg to use either the server or the client (do this in each folder).
 

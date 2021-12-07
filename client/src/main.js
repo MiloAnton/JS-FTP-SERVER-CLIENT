@@ -10,7 +10,7 @@ const client = createConnection({ port: 4242 }, () => {
 
 client.on("data", (data) => {
   const message = data.toString();
-  console.log("Message received:", message);
+  console.log("Server answered:", message);
 
   const [status, ...args] = message.trim().split(" ");
   if (status == 230 && currentCommand === "USER") {
@@ -24,7 +24,6 @@ client.on("data", (data) => {
       input: process.stdin,
     });
     rl.on("line", (input) => {
-      console.log('Input:', input);
       client.write(input)
     });
   };

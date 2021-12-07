@@ -6,40 +6,39 @@ export function launch(port) {
     console.log("new connection.");
     socket.on("data", (data) => {
       const message = data.toString();
-
       const [command, ...args] = message.trim().split(" ");
       console.log(command, args);
 
-      switch(command) {
+      switch (command) {
         case "USER":
           socket.write(checkUser(args));
           break;
-        case "PASS": 
+        case "PASS":
           socket.write(checkPasswd(args))
           break;
         case "PWD":
-          socket.write("Current directory: "+ cwd);
+          socket.write("Current directory: " + cwd);
           break;
         case "QUIT":
           socket.write("200 \r\n");
           break;
         case "LIST":
-          
+          socket.write("Current folder contains : \r\n");
           break;
         case "CWD":
-          
+          socket.write("The folder you're in is now : \r\n");
           break;
-        case "RETR": 
-
+        case "RETR":
+          socket.write("transfer a copy of the file FILE from the server to the client\r\n")
           break;
         case "STOR":
-          
-          break; 
+          socket.write("transfer a copy of the file FILE from the client to the server\r\n")
+          break;
         case "HELP":
-          socket.write("The server handles the following commands:\nUSER <username>: check if the user exists\nPASS <password>: authenticate the user with a password\nLIST: list the current directory of the server\nCWD <directory>: change the current directory of the server\nRETR <filename>: transfer a copy of the file FILE from the server to the client\nSTOR <filename>: transfer a copy of the file FILE from the client to the server\nPWD: display the name of the current directory of the server\nHELP: send helpful information to the client\nQUIT: close the connection and stop the program")
+          socket.write("\n---------\nThe server handles the following commands:\n---------\nUSER <username>: check if the user exists\nPASS <password>: authenticate the user with a password\nLIST: list the current directory of the server\nCWD <directory>: change the current directory of the server\nRETR <filename>: transfer a copy of the file FILE from the server to the client\nSTOR <filename>: transfer a copy of the file FILE from the client to the server\nPWD: display the name of the current directory of the server\nHELP: send helpful information to the client\nQUIT: close the connection and stop the program\r\n")
           break;
         default:
-          console.log("command not supported:", command, args);
+          console.log("command not supported:", command, args, "\r\n");
       }
     });
 
