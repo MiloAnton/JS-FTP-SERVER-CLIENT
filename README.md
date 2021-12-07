@@ -10,6 +10,19 @@ coded in JavaScript.
 - Feel free to give me bonus points for happiness and "joie de vivre"
 - ✨Magic ✨
 
+## How about a laugh ?
+
+<table>
+ <tr>
+  <th>Theme Name</th>
+  <th>Preview Image</th>
+ </tr>
+ <tr>
+ <td>default</td>
+ <td style="padding-top:4px"><img src = "https://readme-jokes.vercel.app/api"></td>
+ </tr>
+</table>
+
 ## Features
 
 - Can connect to several clients 
