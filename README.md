@@ -12,16 +12,7 @@ coded in JavaScript.
 
 ## How about a laugh ?
 
-<table>
- <tr>
-  <th>Theme Name</th>
-  <th>Preview Image</th>
- </tr>
- <tr>
- <td>default</td>
- <td style="padding-top:4px"><img src = "https://readme-jokes.vercel.app/api"></td>
- </tr>
-</table>
+<img src = "https://readme-jokes.vercel.app/api"></img>
 
 ## Features
 
