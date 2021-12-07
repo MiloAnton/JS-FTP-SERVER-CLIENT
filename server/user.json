@@ -1,0 +1,14 @@
+{
+    "Nico": {
+        "name": "Nico",
+        "password": "Nikoto"
+    },
+    "Milo": {
+        "name": "Milo",
+        "password": "Nikoto"
+    },
+    "Simon": {
+        "name": "Simon",
+        "password": "Nikoto"
+    }
+}

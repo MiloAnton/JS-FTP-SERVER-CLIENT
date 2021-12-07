@@ -1,4 +1,5 @@
 import { createConnection } from "net";
+import { createInterface } from "readline";
 
 let currentCommand = '';
 let isAuthenticated = false;
@@ -18,6 +19,15 @@ client.on("data", (data) => {
 
   if (status == 220) {
     currentCommand = "USER";
-    client.write("USER anonymous");
+    client.write("USER Milo");
+    const rl = createInterface({
+      input: process.stdin,
+    });
+    rl.on("line", (input) => {
+      console.log('Input:', input);
+      client.write(input)
+    });
   };
+
 });
+
