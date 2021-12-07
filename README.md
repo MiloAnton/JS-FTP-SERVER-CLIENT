@@ -44,7 +44,7 @@ You have several choices to run, build, and start a transcrypted version of eith
 ```sh
 npm run dev #Used to try it in a dev environment 
 npm run build #Transcypt the code thanks to Babel
-npm run start #Production environment, best performance you can get 
+npm run start #Production environment, best performance you can get (you need to have built the code beforehand)
 ```
 
 ## License
