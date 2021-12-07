@@ -1,3 +1,6 @@
+import { readDirectory } from './readDirectory';
+import { checkPasswd } from './checkPassword';
+import { checkUser } from './checkUser';
 import { createServer } from "net";
 
 export function launch(port) {
@@ -18,14 +21,14 @@ export function launch(port) {
         case "PASS":
           socket.write(checkPasswd(args, currentUser))
           break;
-        case "LIST":
+        case "PWD":
           socket.write(process.cwd());
           break;
         case "QUIT":
           socket.write("200 \r\n");
           break;
-        case "PWD":
-          socket.write("Current folder contains : \r\n");
+        case "LIST":
+          socket.write("\nCurrent directory filenames:" + readDirectory());
           break;
         case "CWD":
           socket.write("The folder you're in is now : \r\n");
@@ -43,35 +46,13 @@ export function launch(port) {
           socket.write(currentUser);
           break; 
         default:
-          console.log("command not supported:", command, args, "\r\n");
+          console.log("502 command does not exist :", command, args, "\r\n");
       }
     });
-    socket.write("220 Hello World \r\n");
+    socket.write("220 Hello World! \r\n");
   });
 
   server.listen(port, () => {
     console.log(`server started at localhost:${port}`);
   });
-}
-
-export function checkUser(name) {
-  let answer = "User does not exist";
-  const fs = require('fs');
-  let rawdata = fs.readFileSync('C:/Users/milor/Dropbox/Milo/Alternance/EFREI/Node.JS API/ftplive/my-ftp-live/server/user.json');
-  let user = JSON.parse(rawdata);
-  if (user[name] != null) {
-    answer = "User exists"
-  }
-  return answer;
-}
-
-export function checkPasswd(password, currentUser) {
-  let passw = "Password does not correspond";
-  const fs = require('fs');
-  let rawdata = fs.readFileSync('C:/Users/milor/Dropbox/Milo/Alternance/EFREI/Node.JS API/ftplive/my-ftp-live/server/user.json');
-  let user = JSON.parse(rawdata);
-  if (user[password] == password) {
-    passw = "Password corresponds"
-  }
-  return answer;
 }

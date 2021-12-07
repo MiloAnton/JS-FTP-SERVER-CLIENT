@@ -5,7 +5,7 @@ let currentCommand = '';
 let isAuthenticated = false;
 
 const client = createConnection({ port: 4242 }, () => {
-  console.log("client connected.");
+  console.log("Client successfully connected to server.");
 });
 
 client.on("data", (data) => {
