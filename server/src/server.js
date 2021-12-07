@@ -1,5 +1,4 @@
 import { createServer } from "net";
-import { cwd } from 'process';
 
 export function launch(port) {
   const server = createServer((socket) => {
@@ -8,21 +7,24 @@ export function launch(port) {
       const message = data.toString();
       const [command, ...args] = message.trim().split(" ");
       console.log(command, args);
-
+      let currentUser = '';
       switch (command) {
         case "USER":
-          socket.write(checkUser(args));
+          let res = socket.write(checkUser(args));
+          if (res === 'User exists') {
+            currentUser = args;
+          }
           break;
         case "PASS":
-          socket.write(checkPasswd(args))
+          socket.write(checkPasswd(args, currentUser))
           break;
-        case "PWD":
-          socket.write("Current directory: " + cwd);
+        case "LIST":
+          socket.write(process.cwd());
           break;
         case "QUIT":
           socket.write("200 \r\n");
           break;
-        case "LIST":
+        case "PWD":
           socket.write("Current folder contains : \r\n");
           break;
         case "CWD":
@@ -37,11 +39,13 @@ export function launch(port) {
         case "HELP":
           socket.write("\n---------\nThe server handles the following commands:\n---------\nUSER <username>: check if the user exists\nPASS <password>: authenticate the user with a password\nLIST: list the current directory of the server\nCWD <directory>: change the current directory of the server\nRETR <filename>: transfer a copy of the file FILE from the server to the client\nSTOR <filename>: transfer a copy of the file FILE from the client to the server\nPWD: display the name of the current directory of the server\nHELP: send helpful information to the client\nQUIT: close the connection and stop the program\r\n")
           break;
+        case "WHOAMI":
+          socket.write(currentUser);
+          break; 
         default:
           console.log("command not supported:", command, args, "\r\n");
       }
     });
-
     socket.write("220 Hello World \r\n");
   });
 
@@ -61,7 +65,7 @@ export function checkUser(name) {
   return answer;
 }
 
-export function checkPasswd(password) {
+export function checkPasswd(password, currentUser) {
   let passw = "Password does not correspond";
   const fs = require('fs');
   let rawdata = fs.readFileSync('C:/Users/milor/Dropbox/Milo/Alternance/EFREI/Node.JS API/ftplive/my-ftp-live/server/user.json');
