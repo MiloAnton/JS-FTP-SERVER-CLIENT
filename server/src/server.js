@@ -23,10 +23,12 @@ export function launch(port) {
           socket.write(checkPasswd(args, currentUser))
           break;
         case "PWD":   // Has to return the current position in the servers filesystem
-          socket.write(process.cwd());
+          socket.write(process.cwd() + "\r\n");
           break;
         case "QUIT":  // Disconnects client from server
-          socket.write("221 \r\n");
+          socket.write("221 Closing connection \r\n");
+          socket.end();
+          socket.destroy();
           break;
         case "LIST":  // Similar to ls in Bash, lists files in current folder
           socket.write("\nCurrent directory filenames: \n" + readDirectory());

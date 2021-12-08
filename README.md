@@ -1,5 +1,5 @@
 # myFtp_MiloAnton
-## _The Last node ftp server and client, Ever_
+## _The Last node ftp server and client you'll ever need_
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -8,7 +8,7 @@ coded in JavaScript.
 
 - Project to be returned before December 10th at 8PM
 - Feel free to give me bonus points for happiness and "joie de vivre"
-- ✨Magic ✨
+- ✨Magic✨
 
 ## How about a laugh ?
 
@@ -49,4 +49,4 @@ npm run start #Production environment, best performance you can get (you need to
 
 ## License
 
-None :)
+None :) 

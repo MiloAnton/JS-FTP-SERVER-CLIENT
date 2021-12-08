@@ -1,3 +1,4 @@
+import { SSL_OP_EPHEMERAL_RSA } from "constants";
 import { createConnection } from "net";
 import { createInterface } from "readline";
 
@@ -27,6 +28,11 @@ client.on("data", (data) => {
       client.write(input)
     });
   };
+
+  if (status == 221) {
+    console.log("Client will now close. See you bientôt :) ! <3");
+    process.exit();
+  }
 
 });
 
