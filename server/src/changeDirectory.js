@@ -1,5 +1,3 @@
 export function changeDirectory(target) {
-    process.chdir( target );
+    process.chdir( target.toString() );
 }
-
-//NOT FUNCTIONNAL

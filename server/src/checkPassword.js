@@ -1,9 +1,9 @@
-export function checkPasswd(password, currentUser) {
+export function checkPasswd(password, allSockets, socket) {
     let passw = "430 Authentication failed\r\n";
     const fs = require('fs');
-    let rawdata = fs.readFileSync('C:/Users/milor/Dropbox/Milo/Alternance/EFREI/Node.JS API/ftplive/my-ftp-live/server/user.json');
-    let passwd = JSON.parse(rawdata);
-    if (passwd[currentUser] == password) {
+    let rawdata = fs.readFileSync(`${__dirname}/../user.json`);
+    let bank = JSON.parse(rawdata);
+    if (bank[allSockets[socket.uid]]["password"] == password) {
         passw = "230 Password corresponds, authentication was a success !\r\n"
     }
     return passw;
