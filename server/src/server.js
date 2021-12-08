@@ -28,7 +28,7 @@ export function launch(port) {
           socket.write(checkPasswd(args, allSockets, socket))
           break;
         case "PWD":   // Has to return the current position in the servers filesystem
-          socket.write(process.cwd() + "\r\n");
+          socket.write("257 " + process.cwd() + "\r\n");
           break;
         case "QUIT":  // Disconnects client from server
           quitConnection(socket);
@@ -50,6 +50,21 @@ export function launch(port) {
           break;
         case "WHOAMI":  // Displays the current connected user
           socket.write(allSockets[socket.uid].toString());
+          break;
+        case "TYPE":
+          socket.write("200 \r\n");
+          break;
+        case "EPSV":
+          socket.write("200 \r\n");
+          break;
+        case "EPRT":
+          socket.write("200 \r\n");
+          break;
+        case "SYST":
+          socket.write("215 \r\n");
+          break;
+        case "FEAT":
+          socket.write("211 \r\n");
           break;
         default:
           console.log("502 command does not exist :", command, args, "\r\n");
