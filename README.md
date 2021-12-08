@@ -1,7 +1,7 @@
 # myFtp_MiloAnton
 ## _The Last node ftp server and client you'll ever need_
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
 myFtp is a node compatible, FTP client AND server,
 coded in JavaScript.
