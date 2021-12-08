@@ -18,7 +18,7 @@ coded in JavaScript.
 
 - Can connect to several clients 
 - Lightweight and compatible with every computer
-- Import and export files in just one command
+- Import and export files in just one command (not yet implemented)
 - A child could use it, obviously
 
 myFtp_MiloAnton is a lightweight ftp server and client based on the RFC.

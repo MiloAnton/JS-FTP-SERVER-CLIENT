@@ -8,5 +8,3 @@ export function checkPasswd(password, allSockets, socket) {
     }
     return passw;
 }
-
-// STILL DOESN'T WORK
