@@ -2,6 +2,12 @@
 ## _The Last node ftp server and client you'll ever need_
 
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
+[![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com)
+[![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 myFtp is a node compatible, FTP client AND server,
 coded in JavaScript.
