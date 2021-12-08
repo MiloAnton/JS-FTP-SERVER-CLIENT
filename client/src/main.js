@@ -1,4 +1,3 @@
-import { SSL_OP_EPHEMERAL_RSA } from "constants";
 import { createConnection } from "net";
 import { createInterface } from "readline";
 
@@ -18,7 +17,7 @@ client.on("data", (data) => {
     isAuthenticated = true;
   }
 
-  if (status == 220) {
+  if (status == 220) { 
     currentCommand = "USER";
     client.write("USER Milo");
     const rl = createInterface({

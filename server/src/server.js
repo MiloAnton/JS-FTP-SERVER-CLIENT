@@ -49,7 +49,7 @@ export function launch(port) {
           helpMePlease(socket);
           break;
         case "WHOAMI":  // Displays the current connected user
-          socket.write(allSockets[socket.uid].toString());
+          socket.write(allSockets[socket.uid].toString() + "\r\n");
           break;
         case "TYPE":
           socket.write("200 \r\n");
