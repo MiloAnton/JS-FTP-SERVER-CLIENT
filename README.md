@@ -21,9 +21,10 @@ coded in JavaScript.
 ## Features
 
 - Can connect to several clients at the same time
+- 😍GREAT😍 error management, truly incredible
 - Lightweight and compatible with every computer 
 - Easy navigation in the servers filesystem
-- Import and export files in just one command (_not yet implemented_)
+- _Import and export files in just one command_ (_not yet implemented_)
 - A child could use it, obviously
 
 myFtp_MiloAnton is a lightweight ftp server and client based on the RFC.
@@ -32,7 +33,7 @@ myFtp_MiloAnton is a lightweight ftp server and client based on the RFC.
 You CAN use any protocol you want [ if interested, you can check and respect the RFCs] 
 
 This text you see here is written with lots of love ! To get a feel
-for a great README.md file.
+for a truly great README.md file.
 
 ## Installation
 
@@ -49,12 +50,12 @@ You have several choices to run, build, and start a transcrypted version of eith
 ```sh
 npm run dev #Used to try it in a dev environment 
 npm run build #Transcypt the code thanks to Babel
-npm run start #Production environment, best performance you can get (you need to have built the code beforehand)
+npm run start #Test your production environment, best performance you can get (you need to have built the code beforehand)
 ```
 
 ## Execute 
 
-Once you've done the steps above, you should have a ```.dist```folder in your client or server folder according to the one you've built. 
+Once you've done the steps above, you should have a ```.dist``` folder in your client or server folder according to the one you've built. 
 
 You can execute your final code by doing so : 
 
@@ -65,14 +66,14 @@ node main.js
 
 ## Commands 
 
-The server handles the following commands:
+The server handles the following commands (commands in _italic_ are not yet implemented):
 
 * `USER <username>`: check if the user exist
 * `PASS <password>`: authenticate the user with a password
 * `LIST`: list the current directory of the server
 * `CWD <directory>`: change the current directory of the server
-* `RETR <filename>`: transfer a copy of the file _FILE_ from the server to the client
-* `STOR <filename>`: transfer a copy of the file _FILE_ from the client to the server
+* _`RETR <filename>`: transfer a copy of the file _FILE_ from the server to the client_
+* _`STOR <filename>`: transfer a copy of the file _FILE_ from the client to the server_
 * `PWD`: display the name of the current directory of the server
 * `HELP`: send helpful information to the client
 * `QUIT`: close the connection and stop the program
