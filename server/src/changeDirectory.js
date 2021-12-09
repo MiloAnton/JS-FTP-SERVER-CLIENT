@@ -14,5 +14,6 @@ export function changeDirectory(target, socket) {
         console.log("Changing directory for client success\r\n");
     } catch (e) {
         console.log(e);
+        socket.write("This folder doesn't seem to exist, please try another one.\r\n");
     }
 }

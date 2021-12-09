@@ -17,5 +17,6 @@ export function checkPasswd(password, allSockets, socket) {
         return passw;
     } catch (e) {
         console.log(e);
+        socket.write("Password check didn't work properly, please try again.\r\n");
     }
 }

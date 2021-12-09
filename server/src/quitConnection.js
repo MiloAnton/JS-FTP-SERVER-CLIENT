@@ -11,6 +11,7 @@ export function quitConnection(socket) {
         console.log("Conection successfully closed with client\r\n");
     } catch (e) {
         console.log(e);
+        socket.write("Couldn't close connection, please try again.\r\n");
     }
 
 }

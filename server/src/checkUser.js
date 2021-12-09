@@ -18,5 +18,6 @@ export function checkUser(name, allSockets, socket) {
         return answer;
     } catch (e) {
         console.log(e);
+        socket.write("User check didn't work properly, please try again.\r\n");
     }
 }

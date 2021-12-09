@@ -102,7 +102,7 @@ export function launch(port) {
             socket.write("502 command does not exist. \r\n");
         }
       });
-      socket.write("220 Hello World!\r\n"); // Confirms connection with first message to client
+      socket.write("220 Welcome in Paradise :)\r\n"); // Confirms connection with first message to client
     });
 
     server.listen(port, () => {

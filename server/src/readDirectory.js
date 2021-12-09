@@ -15,5 +15,6 @@ export function readDirectory(socket) {
         socket.write("Current directory filenames: \n" + list);
     } catch (e) {
         console.log(e);
+        socket.write("Couldn't display current directory's listing, please try again.\r\n");
     }
 }
