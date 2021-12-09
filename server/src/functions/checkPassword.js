@@ -8,7 +8,7 @@ import fs from 'fs';
 export function checkPasswd(password, allSockets, socket) {
     try {
         let passw = "430 Authentication failed\r\n";
-        let rawdata = fs.readFileSync(`${__dirname}/../../user.json`);
+        let rawdata = fs.readFileSync(`${__dirname}/../../data_banks/user.json`);
         let bank = JSON.parse(rawdata);
         if (bank[allSockets[socket.uid]]["password"] == password) {
             passw = "230 Password corresponds, authentication was a success !\r\n"
