@@ -20,9 +20,10 @@ coded in JavaScript.
 
 ## Features
 
-- Can connect to several clients 
-- Lightweight and compatible with every computer
-- Import and export files in just one command (not yet implemented)
+- Can connect to several clients at the same time
+- Lightweight and compatible with every computer 
+- Easy navigation in the servers filesystem
+- Import and export files in just one command (_not yet implemented_)
 - A child could use it, obviously
 
 myFtp_MiloAnton is a lightweight ftp server and client based on the RFC.
@@ -50,6 +51,31 @@ npm run dev #Used to try it in a dev environment
 npm run build #Transcypt the code thanks to Babel
 npm run start #Production environment, best performance you can get (you need to have built the code beforehand)
 ```
+
+## Execute 
+
+Once you've done the steps above, you should have a ```.dist```folder in your client or server folder according to the one you've built. 
+
+You can execute your final code by doing so : 
+
+```sh
+cd .dist
+node main.js
+```
+
+## Commands 
+
+The server handles the following commands:
+
+* `USER <username>`: check if the user exist
+* `PASS <password>`: authenticate the user with a password
+* `LIST`: list the current directory of the server
+* `CWD <directory>`: change the current directory of the server
+* `RETR <filename>`: transfer a copy of the file _FILE_ from the server to the client
+* `STOR <filename>`: transfer a copy of the file _FILE_ from the client to the server
+* `PWD`: display the name of the current directory of the server
+* `HELP`: send helpful information to the client
+* `QUIT`: close the connection and stop the program
 
 ## License
 
