@@ -4,7 +4,13 @@
  */
 
 export function quitConnection(socket) {
-    socket.write("221 Closing connection \r\n");
-    socket.end();
-    socket.destroy();
+    try {
+        socket.write("221 Closing connection \r\n");
+        socket.end();
+        socket.destroy();
+        console.log("Conection successfully closed with client\r\n");
+    } catch (e) {
+        console.log(e);
+    }
+
 }
