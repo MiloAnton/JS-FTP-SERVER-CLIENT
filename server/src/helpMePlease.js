@@ -1,3 +1,8 @@
+/**
+ * myFtp by MiloAnton
+ * Function to answer the client all the commands this server supports  
+ */
+
 export function helpMePlease(socket) {
     const fs = require('fs');
     let rawdata = fs.readFileSync(`${__dirname}/HELP.json`);

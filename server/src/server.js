@@ -1,3 +1,9 @@
+/**
+ * myFtp by MiloAnton
+ * Principal function to support all the commands server-side
+ * Calls each function and manages different sockets
+ */
+
 import { changeDirectory } from './changeDirectory';
 import { helpMePlease } from './helpMePlease';
 import { readDirectory } from './readDirectory';
@@ -34,7 +40,7 @@ export function launch(port) {
           quitConnection(socket);
           break;
         case "LIST":  // Similar to ls in Bash, lists files in current folder
-          socket.write("\nCurrent directory filenames: \n" + readDirectory());
+          socket.write("Current directory filenames: \n" + readDirectory());
           break;
         case "CWD":   // Change folder, used to navigate filesystem
           changeDirectory(args, socket);
@@ -71,7 +77,7 @@ export function launch(port) {
           socket.write("502 command does not exist. \r\n");
       }
     });
-    socket.write("220 Hello World! \r\n");  // Confirms connection with first message to client
+    socket.write("220\r\n");  // Confirms connection with first message to client
   });
 
   server.listen(port, () => {

@@ -1,3 +1,8 @@
+/**
+ * myFtp by MiloAnton
+ * Function to check if a user submitted by client is valid 
+ */
+
 export function checkUser(name, allSockets, socket) {
     let answer = "User does not exist";
     const fs = require('fs');
