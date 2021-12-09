@@ -1,6 +1,6 @@
 /**
  * myFtp by MiloAnton
- * Function to launch ftp server
+ * First file to be read by node : Launch ftp server
  */
 
 import { launch } from "./server";

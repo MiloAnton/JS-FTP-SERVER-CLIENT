@@ -3,7 +3,7 @@
  * Function to check if a user submitted by client is valid 
  */
 
- import fs from 'fs';
+import fs from 'fs';
 
 export function checkUser(name, allSockets, socket) {
     try {

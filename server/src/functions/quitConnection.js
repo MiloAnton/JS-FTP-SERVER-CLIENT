@@ -13,5 +13,4 @@ export function quitConnection(socket) {
         console.log(e);
         socket.write("Couldn't close connection, please try again.\r\n");
     }
-
 }

@@ -3,7 +3,7 @@
  * Function to answer the client all the commands this server supports  
  */
 
- import fs from 'fs';
+import fs from 'fs';
 
 export function helpMePlease(socket) {
     try {
