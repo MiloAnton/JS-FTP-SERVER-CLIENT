@@ -26,7 +26,7 @@ client.on("data", (data) => {
   switch (status) {
     case '220':
       currentCommand = "USER";
-      client.write("USER Milo");
+      console.log("Please precise the USER (with command): ");
       const rl = createInterface({
         input: process.stdin,
       });

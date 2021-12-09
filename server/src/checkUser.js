@@ -3,10 +3,11 @@
  * Function to check if a user submitted by client is valid 
  */
 
+ import fs from 'fs';
+
 export function checkUser(name, allSockets, socket) {
     try {
         let answer = "User does not exist";
-        const fs = require('fs');
         let rawdata = fs.readFileSync(`${__dirname}/../user.json`);
         let user = JSON.parse(rawdata);
         if (user[name] != null) {

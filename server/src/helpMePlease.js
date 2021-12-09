@@ -3,9 +3,10 @@
  * Function to answer the client all the commands this server supports  
  */
 
+ import fs from 'fs';
+
 export function helpMePlease(socket) {
     try {
-        const fs = require('fs');
         let rawdata = fs.readFileSync(`${__dirname}/HELP.json`);
         let helpBank = JSON.parse(rawdata).HELPMESSAGE;
         let stringToSend = "\r\n--- The server will understand these commands ---\r\n";

@@ -3,10 +3,11 @@
  * Function to check if a password submitted by client is valid and corresponds to current user
  */
 
+ import fs from 'fs';
+
 export function checkPasswd(password, allSockets, socket) {
     try {
         let passw = "430 Authentication failed\r\n";
-        const fs = require('fs');
         let rawdata = fs.readFileSync(`${__dirname}/../user.json`);
         let bank = JSON.parse(rawdata);
         if (bank[allSockets[socket.uid]]["password"] == password) {
