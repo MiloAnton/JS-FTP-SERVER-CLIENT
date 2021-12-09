@@ -25,6 +25,12 @@ import {
 import {
   quitConnection
 } from './quitConnection';
+import {
+  currentDirectory
+} from './currentDirectory';
+import {
+  whoami
+} from './whoami';
 
 const allSockets = {};
 let idSocket = 0;
@@ -49,17 +55,17 @@ export function launch(port) {
             socket.write(checkPasswd(args, allSockets, socket))
             break;
           case "PWD": // Has to return the current position in the servers filesystem
-            socket.write("257 " + process.cwd() + "\r\n");
+            currentDirectory(socket);
             break;
           case "QUIT": // Disconnects client from server
             quitConnection(socket);
             break;
           case "LIST": // Similar to ls in Bash, lists files in current folder
-            socket.write("Current directory filenames: \n" + readDirectory());
+            readDirectory(socket)
             break;
           case "CWD": // Change folder, used to navigate filesystem
-            let ret = changeDirectory(args, socket);
-            if(ret === 0) {
+            let retErr = changeDirectory(args, socket);
+            if (retErr === 0) {
               console.log("Target was empty.");
               break;
             }
@@ -74,7 +80,7 @@ export function launch(port) {
             helpMePlease(socket);
             break;
           case "WHOAMI": // Displays the current connected user
-            socket.write(allSockets[socket.uid].toString() + "\r\n");
+            whoami(socket, allSockets);
             break;
           case "TYPE":
             socket.write("200 \r\n");

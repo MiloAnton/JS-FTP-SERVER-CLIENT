@@ -5,14 +5,14 @@
 
 import fs from 'fs';
 
-export function readDirectory() {
+export function readDirectory(socket) {
     try {
         let list = "";
         let loc = fs.readdirSync(process.cwd());
         loc.forEach((file) => {
             list += file + "\r\n"; // Concatenates string list with files 
         }); // The string already uses a clean layout 
-        return list;
+        socket.write("Current directory filenames: \n" + list);
     } catch (e) {
         console.log(e);
     }

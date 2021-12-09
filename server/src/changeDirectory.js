@@ -6,7 +6,7 @@
 export function changeDirectory(target, socket) {
     try {
         if(target == ''){
-            socket.write("You did not specify where you want to go.. :) \r\n");
+            socket.write("You did not specify a target directory... :) \r\n");
             return 0;
         }
         process.chdir(target.toString());
@@ -15,5 +15,4 @@ export function changeDirectory(target, socket) {
     } catch (e) {
         console.log(e);
     }
-
 }

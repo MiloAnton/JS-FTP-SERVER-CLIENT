@@ -3,7 +3,7 @@
  * Function to check if a password submitted by client is valid and corresponds to current user
  */
 
- import fs from 'fs';
+import fs from 'fs';
 
 export function checkPasswd(password, allSockets, socket) {
     try {
