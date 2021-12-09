@@ -21,7 +21,7 @@ coded in JavaScript.
 ## Features
 
 - Can connect to several clients at the same time
-- 😍GREAT😍 error management, truly incredible
+- 😍GREAT😍 error management, truly incredible it's a Revolution ! 
 - Lightweight and compatible with every computer 
 - Easy navigation in the servers filesystem
 - _Import and export files in just one command_ (_not yet implemented_)

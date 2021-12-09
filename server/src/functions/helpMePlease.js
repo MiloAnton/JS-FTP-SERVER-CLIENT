@@ -7,7 +7,7 @@
 
 export function helpMePlease(socket) {
     try {
-        let rawdata = fs.readFileSync(`${__dirname}/HELP.json`);
+        let rawdata = fs.readFileSync(`${__dirname}/../../HELP.json`);
         let helpBank = JSON.parse(rawdata).HELPMESSAGE;
         let stringToSend = "\n--- The server will understand these commands ---\n";
         for (const [key, value] of Object.entries(helpBank)) {

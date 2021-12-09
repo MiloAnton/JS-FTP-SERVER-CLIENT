@@ -6,31 +6,31 @@
 
 import {
   changeDirectory
-} from './changeDirectory';
+} from './functions/changeDirectory';
 import {
   helpMePlease
-} from './helpMePlease';
+} from './functions/helpMePlease';
 import {
   readDirectory
-} from './readDirectory';
+} from './functions/readDirectory';
 import {
   checkPasswd
-} from './checkPassword';
+} from './functions/checkPassword';
 import {
   checkUser
-} from './checkUser';
+} from './functions/checkUser';
 import {
   createServer
 } from "net";
 import {
   quitConnection
-} from './quitConnection';
+} from './functions/quitConnection';
 import {
   currentDirectory
-} from './currentDirectory';
+} from './functions/currentDirectory';
 import {
   whoami
-} from './whoami';
+} from './functions/whoami';
 
 const allSockets = {};
 let idSocket = 0;

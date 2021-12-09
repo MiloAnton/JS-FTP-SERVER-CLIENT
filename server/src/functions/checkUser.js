@@ -8,7 +8,7 @@
 export function checkUser(name, allSockets, socket) {
     try {
         let answer = "User does not exist";
-        let rawdata = fs.readFileSync(`${__dirname}/../user.json`);
+        let rawdata = fs.readFileSync(`${__dirname}/../../user.json`);
         let user = JSON.parse(rawdata);
         if (user[name] != null) {
             allSockets[socket.uid] = name;
