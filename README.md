@@ -10,7 +10,7 @@
 myFtp is a node compatible, FTP client AND server,
 coded in JavaScript.
 
-- Project to be returned before December 10th at 8PM
+- Project to be returned before December 13th at 8PM
 - Feel free to give me bonus points for happiness and "joie de vivre"
 - ✨Magic✨
 
