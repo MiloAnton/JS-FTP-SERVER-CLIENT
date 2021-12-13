@@ -16,8 +16,8 @@ import {
 import {
   checkPasswd
 } from './functions/checkPassword';
-import {
-  checkUser
+import { 
+  checkUser 
 } from './functions/checkUser';
 import {
   createServer
@@ -41,6 +41,7 @@ export function launch(port) {
       let newIdSocket = idSocket;
       idSocket++;
       socket.uid = newIdSocket;
+      console.log(`Created new socket with ID : ${idSocket}`);
       allSockets[newIdSocket] = '';
       console.log("new connection.");
       socket.on("data", (data) => {
@@ -66,7 +67,7 @@ export function launch(port) {
           case "CWD": // Change folder, used to navigate filesystem
             let retErr = changeDirectory(args, socket);
             if (retErr === 0) {
-              console.log("Target was empty.");
+              console.log("Target was empty."); // Error message server side
               break;
             }
             break;

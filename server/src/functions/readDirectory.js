@@ -10,7 +10,7 @@ export function readDirectory(socket) {
         let list = "";
         let loc = fs.readdirSync(process.cwd());
         loc.forEach((file) => {
-            list += file + "\r\n"; // Concatenates string list with files 
+            list += file + "\n"; // Concatenates string list with files 
         }); // The string already uses a clean layout 
         socket.write("Current directory filenames: \n" + list);
     } catch (e) {

@@ -42,5 +42,4 @@ client.on("data", (data) => {
   if (status == 230 && currentCommand === "USER") {
     isAuthenticated = true;
   }
-
 });
